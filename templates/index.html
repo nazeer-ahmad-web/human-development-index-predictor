@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>HDI Monitor - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#b0f0d6",
+                        "inverse-surface": "#213145",
+                        "on-primary-fixed-variant": "#0b513d",
+                        "on-primary-fixed": "#002117",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary-container": "#00714d",
+                        "outline-variant": "#bfc9c3",
+                        "background": "#f8f9ff",
+                        "tertiary-fixed": "#ffddb8",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "error": "#ba1a1a",
+                        "tertiary": "#442800",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "on-secondary-fixed": "#002113",
+                        "on-surface-variant": "#404944",
+                        "inverse-primary": "#95d3ba",
+                        "surface-variant": "#d3e4fe",
+                        "on-error-container": "#93000a",
+                        "surface": "#f8f9ff",
+                        "tertiary-container": "#623c00",
+                        "secondary": "#006c49",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#003527",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-background": "#0b1c30",
+                        "on-primary-container": "#80bea6",
+                        "secondary-container": "#6cf8bb",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#2a1700",
+                        "primary-fixed-dim": "#95d3ba",
+                        "surface-tint": "#2b6954",
+                        "surface-container-high": "#dce9ff",
+                        "on-surface": "#0b1c30",
+                        "outline": "#707974",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-tertiary-container": "#f69f0d",
+                        "surface-container-low": "#eff4ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "primary-container": "#064e3b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "max-width": "1440px",
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "48px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="font-body-md text-on-surface">
+
+<header class="bg-surface dark:bg-inverse-surface w-full top-0 border-b border-outline-variant dark:border-outline flex items-center justify-between px-margin-mobile md:px-margin-desktop py-4 z-50 sticky">
+    <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary dark:text-primary-fixed" data-icon="analytics">analytics</span>
+        <h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">HDI Monitor</h1>
+    </div>
+    <nav class="hidden md:flex gap-8">
+        <a class="font-label-md text-label-md text-primary dark:text-primary-fixed transition-colors duration-200" href="/">Dashboard</a>
+        <a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest px-2 py-1 rounded transition-colors duration-200" href="#">Predictor</a>
+        <a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest px-2 py-1 rounded transition-colors duration-200" href="#">Countries</a>
+    </nav>
+    <div class="flex items-center gap-4">
+        <button class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</button>
+        <div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center border border-outline-variant">
+            <span class="material-symbols-outlined text-on-secondary-container" data-icon="person">person</span>
+        </div>
+    </div>
+</header>
+
+<main class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-12">
+    <section class="mb-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div class="max-w-2xl">
+                <span class="font-label-md text-label-md text-secondary uppercase tracking-wider mb-2 block">Global Insights Platform</span>
+                <h2 class="font-display-lg text-display-lg text-primary mb-4">Tracking Human Progress Across Nations.</h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                    Access real-time human development data, analyze critical dimensions of well-being, and predict future trends using our proprietary socio-economic modeling.
+                </p>
+                
+                <form action="/predict" method="POST" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 bg-white border border-outline-variant p-6 rounded-2xl shadow-sm">
+                    <div>
+                        <label class="block text-xs font-semibold text-on-surface-variant mb-1 uppercase tracking-wider">Life Expectancy (Years)</label>
+                        <input type="number" step="any" name="life_expectancy" placeholder="e.g. 72.6" required class="w-full rounded-xl border border-outline-variant bg-surface-bright p-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-on-surface-variant mb-1 uppercase tracking-wider">Expected Schooling (Years)</label>
+                        <input type="number" step="any" name="expected_schooling" placeholder="e.g. 13.1" required class="w-full rounded-xl border border-outline-variant bg-surface-bright p-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-on-surface-variant mb-1 uppercase tracking-wider">Mean Schooling (Years)</label>
+                        <input type="number" step="any" name="mean_schooling" placeholder="e.g. 12.8" required class="w-full rounded-xl border border-outline-variant bg-surface-bright p-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-on-surface-variant mb-1 uppercase tracking-wider">GNI Per Capita (USD)</label>
+                        <input type="number" step="any" name="gni" placeholder="e.g. 16700" required class="w-full rounded-xl border border-outline-variant bg-surface-bright p-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary">
+                    </div>
+                    <button type="submit" class="sm:col-span-2 bg-primary-container text-on-primary py-3 rounded-xl font-semibold hover:opacity-90 transition shadow-sm flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-sm">auto_awesome</span> Predict HDI Value
+                    </button>
+                </form>
+                </div>
+            
+            <div class="flex gap-4 self-start md:self-end">
+                <button class="border border-outline text-on-surface font-label-md text-label-md px-6 py-3 rounded-xl flex items-center gap-2 hover:bg-surface-container-low transition-all">
+                    <span class="material-symbols-outlined" data-icon="download">download</span> Export 2024 Report
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12">
+        <div class="md:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bento-item p-6 rounded-xl border-t-4 border-t-secondary relative overflow-hidden h-full">
+                <div class="flex items-center justify-between mb-8">
+                    <div class="bg-secondary-container/30 p-3 rounded-lg">
+                        <span class="material-symbols-outlined text-secondary text-3xl" data-icon="health_and_safety">health_and_safety</span>
+                    </div>
+                    <span class="font-label-sm text-label-sm text-on-surface-variant">+1.2% YoY</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-2">Health</h3>
+                <p class="font-body-md text-on-surface-variant mb-4">Measured by life expectancy at birth, reflecting quality of healthcare systems.</p>
+                <div class="flex items-baseline gap-1">
+                    <span class="font-display-lg text-headline-lg text-primary">72.6</span>
+                    <span class="font-label-sm text-label-sm text-on-surface-variant">Avg Years</span>
+                </div>
+            </div>
+            <div class="bento-item p-6 rounded-xl border-t-4 border-t-tertiary-fixed-dim relative overflow-hidden h-full">
+                <div class="flex items-center justify-between mb-8">
+                    <div class="bg-tertiary-fixed/30 p-3 rounded-lg">
+                        <span class="material-symbols-outlined text-tertiary text-3xl" data-icon="school">school</span>
+                    </div>
+                    <span class="font-label-sm text-label-sm text-on-surface-variant">+0.8% YoY</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-2">Education</h3>
+                <p class="font-body-md text-on-surface-variant mb-4">Average and expected years of schooling for all demographics.</p>
+                <div class="flex items-baseline gap-1">
+                    <span class="font-display-lg text-headline-lg text-primary">12.8</span>
+                    <span class="font-label-sm text-label-sm text-on-surface-variant">Mean Years</span>
+                </div>
+            </div>
+            <div class="bento-item p-6 rounded-xl border-t-4 border-t-primary-container relative overflow-hidden h-full">
+                <div class="flex items-center justify-between mb-8">
+                    <div class="bg-primary-fixed/30 p-3 rounded-lg">
+                        <span class="material-symbols-outlined text-primary text-3xl" data-icon="payments">payments</span>
+                    </div>
+                    <span class="font-label-sm text-label-sm text-on-surface-variant">-0.3% YoY</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-2">Standards</h3>
+                <p class="font-body-md text-on-surface-variant mb-4">Gross National Income (GNI) per capita adjusted for local pricing.</p>
+                <div class="flex items-baseline gap-1">
+                    <span class="font-display-lg text-headline-lg text-primary">$16.7k</span>
+                    <span class="font-label-sm text-label-sm text-on-surface-variant">GNI Per Cap</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:col-span-4 bento-item p-6 rounded-xl flex flex-col justify-between bg-surface-container-low border-outline-variant">
+            <div>
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="font-headline-md text-headline-md">Global Trends</h3>
+                    <span class="material-symbols-outlined text-on-surface-variant" data-icon="trending_up">trending_up</span>
+                </div>
+                <p class="font-body-md text-on-surface-variant mb-8">Overall human development index has seen a 19.5% increase since 1990, despite recent plateaus.</p>
+                <div class="h-32 flex items-end justify-between gap-1 mb-6 px-2">
+                    <div class="w-full bg-outline-variant rounded-t-sm hover:bg-secondary transition-colors" style="height: 40%;"></div>
+                    <div class="w-full bg-outline-variant rounded-t-sm hover:bg-secondary transition-colors" style="height: 45%;"></div>
+                    <div class="w-full bg-outline-variant rounded-t-sm hover:bg-secondary transition-colors" style="height: 55%;"></div>
+                    <div class="w-full bg-outline-variant rounded-t-sm hover:bg-secondary transition-colors" style="height: 50%;"></div>
+                    <div class="w-full bg-outline-variant rounded-t-sm hover:bg-secondary transition-colors" style="height: 65%;"></div>
+                    <div class="w-full bg-outline-variant rounded-t-sm hover:bg-secondary transition-colors" style="height: 75%;"></div>
+                    <div class="w-full bg-secondary rounded-t-sm" style="height: 85%;"></div>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <div class="flex items-center justify-between p-3 bg-white rounded-lg border border-outline-variant">
+                    <span class="font-label-sm text-label-sm">Global HDI</span>
+                    <span class="font-label-md text-label-md text-secondary">0.732 (High)</span>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-white rounded-lg border border-outline-variant">
+                    <span class="font-label-sm text-label-sm">Projected 2025</span>
+                    <span class="font-label-md text-label-md text-secondary">0.741</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+        <div class="relative rounded-xl overflow-hidden min-h-[320px] group">
+            <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Sustainable infrastructure" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4Onlru59Yb4fIcUS1qronjtunliD2UUq8txe_8sZVv6krhiHImLB3oUaQsZP1wV0D6t6OGzRZWuD5fxne-HBx4D1fYYQyEJ5W6OJqmVwSUhocIMyiNdAzc0KDeNm578k2s9gvb4sZycz3mGS2STg49-Rkx-gxn2levfHRxCaUPFyqgxA97HAJwzxFbDcsp_GwIjSmEEzlYQNPFViCsWEBI05Wig-z5rUKMgNtrL6NZC6H5XnaqmgM"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-8">
+                <div class="text-white">
+                    <h4 class="font-headline-md text-headline-md mb-2">Sustainable Infrastructure</h4>
+                    <p class="font-body-md opacity-90 max-w-sm">How urban planning and green initiatives correlate with long-term HDI gains.</p>
+                </div>
+            </div>
+        </div>
+        <div class="bento-item p-8 rounded-xl flex flex-col justify-center">
+            <h4 class="font-headline-md text-headline-md mb-4">Latest Insights</h4>
+            <div class="space-y-6">
+                <div class="flex gap-4 group cursor-pointer">
+                    <div class="bg-surface-container rounded p-2 h-fit">
+                        <span class="material-symbols-outlined text-secondary" data-icon="article">article</span>
+                    </div>
+                    <div>
+                        <p class="font-label-sm text-label-sm text-secondary mb-1">MARCH 12, 2024</p>
+                        <h5 class="font-body-md font-semibold group-hover:text-secondary transition-colors">The Digital Divide's Impact on Global Education Indices</h5>
+                    </div>
+                </div>
+                <div class="flex gap-4 group cursor-pointer">
+                    <div class="bg-surface-container rounded p-2 h-fit">
+                        <span class="material-symbols-outlined text-secondary" data-icon="article">article</span>
+                    </div>
+                    <div>
+                        <p class="font-label-sm text-label-sm text-secondary mb-1">MARCH 08, 2024</p>
+                        <h5 class="font-body-md font-semibold group-hover:text-secondary transition-colors">Post-Pandemic Healthcare Resilience in Emerging Economies</h5>
+                    </div>
+                </div>
+                <div class="flex gap-4 group cursor-pointer">
+                    <div class="bg-surface-container rounded p-2 h-fit">
+                        <span class="material-symbols-outlined text-secondary" data-icon="article">article</span>
+                    </div>
+                    <div>
+                        <p class="font-label-sm text-label-sm text-secondary mb-1">FEBRUARY 28, 2024</p>
+                        <h5 class="font-body-md font-semibold group-hover:text-secondary transition-colors">Wealth Disparity and the GNI-HDI Correlation Gap</h5>
+                    </div>
+                </div>
+            </div>
+            <button class="mt-8 text-secondary font-label-md text-label-md flex items-center gap-2 hover:underline">
+                View all reports <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+            </button>
+        </div>
+    </section>
+</main>
+
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface dark:bg-inverse-surface border-t border-outline-variant dark:border-outline">
+    <a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-on-primary-fixed-variant text-on-secondary-container dark:text-primary-fixed rounded-full px-5 py-1 transition-transform scale-95 active:scale-90" href="#">
+        <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+        <span class="font-label-sm text-label-sm">Dashboard</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant p-2 hover:bg-surface-container-low transition-transform scale-95 active:scale-90" href="#">
+        <span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+        <span class="font-label-sm text-label-sm">Predictor</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant p-2 hover:bg-surface-container-low transition-transform scale-95 active:scale-90" href="#">
+        <span class="material-symbols-outlined" data-icon="compare_arrows">compare_arrows</span>
+        <span class="font-label-sm text-label-sm">Countries</span>
+    </a>
+</nav>
+
+<script>
+    document.querySelectorAll('.bento-item').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            const icon = card.querySelector('.material-symbols-outlined');
+            if (icon) icon.style.transform = 'translateY(-2px)';
+        });
+        card.addEventListener('mouseleave', () => {
+            const icon = card.querySelector('.material-symbols-outlined');
+            if (icon) icon.style.transform = 'translateY(0px)';
+        });
+    });
+</script>
+</body>
+</html>
