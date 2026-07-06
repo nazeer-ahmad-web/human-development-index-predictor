@@ -97,8 +97,10 @@ Display Results
 | CSS | Styling |
 | Bootstrap | Responsive UI |
 | Pickle | Model Serialization |
+```
 
 ---
+
 # Project Structure 
 human-development-index-predictor
 │
