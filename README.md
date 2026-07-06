@@ -1,3 +1,4 @@
+Markdown
 # A Comprehensive Measure of Well-Being
 ## Human Development Index (HDI) Prediction using Machine Learning and Flask
 
@@ -7,20 +8,17 @@
 ![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
 
 ## 📌 Project Overview
-
 The **Human Development Index (HDI) Predictor** is a Machine Learning web application that predicts the Human Development Index of a country using socioeconomic indicators.
 
 The project combines **Data Analysis**, **Machine Learning**, and **Flask Web Development** to build an end-to-end prediction system.
 
 Users enter important development indicators such as:
-
 - Life Expectancy
 - Expected Years of Schooling
 - Mean Years of Schooling
 - Gross National Income (GNI) Per Capita
 
 The application predicts the **HDI Score** and classifies it into one of the following categories:
-
 - Very High
 - High
 - Medium
@@ -28,8 +26,7 @@ The application predicts the **HDI Score** and classifies it into one of the fol
 
 ---
 
-# Objectives
-
+## 🎯 Objectives
 - Understand the Human Development Index dataset.
 - Perform Exploratory Data Analysis (EDA).
 - Visualize important relationships among features.
@@ -40,69 +37,57 @@ The application predicts the **HDI Score** and classifies it into one of the fol
 
 ---
 
-# Features
-
-- Data Cleaning
-- Missing Value Handling
-- Exploratory Data Analysis
-- Data Visualization
+## ⚡ Features
+- Data Cleaning & Missing Value Handling
+- Exploratory Data Analysis & Data Visualization
 - Feature Engineering
-- Linear Regression Model
-- Model Evaluation
-- HDI Score Prediction
-- HDI Category Classification
-- Flask Web Application
+- Linear Regression Model Training & Evaluation
+- HDI Score Prediction & Category Classification
+- Flask Web Application with a responsive UI
 - Pickle Model Serialization
 
 ---
 
-# Project Architecture
-
-```
+## 🏗️ Project Architecture
 User
- │
- ▼
+│
+▼
 Flask Web Interface
- │
- ▼
+│
+▼
 Input Validation
- │
- ▼
+│
+▼
 Machine Learning Model
- │
- ▼
+│
+▼
 HDI Prediction
- │
- ▼
+│
+▼
 HDI Category
- │
- ▼
+│
+▼
 Display Results
-```
+
 
 ---
 
-# Technology Stack
+## 🛠️ Technology Stack
 
 | Technology | Purpose |
 |------------|---------|
-| Python | Programming Language |
-| Pandas | Data Processing |
-| NumPy | Numerical Computing |
-| Matplotlib | Data Visualization |
-| Seaborn | Statistical Visualization |
-| Scikit-Learn | Machine Learning |
-| Flask | Web Framework |
-| HTML | Frontend |
-| CSS | Styling |
-| Bootstrap | Responsive UI |
-| Pickle | Model Serialization |
-```
+| **Python** | Programming Language |
+| **Pandas** | Data Processing |
+| **NumPy** | Numerical Computing |
+| **Matplotlib / Seaborn** | Data Visualization |
+| **Scikit-Learn** | Machine Learning Model |
+| **Flask** | Web Framework |
+| **HTML / CSS / Bootstrap** | Responsive Frontend UI |
+| **Pickle** | Model Serialization |
 
 ---
 
-# Project Structure
-```
+## 📂 Folder Structure
 human-development-index-predictor
 │
 ├── dataset
@@ -127,20 +112,20 @@ human-development-index-predictor
 ├── requirements.txt
 ├── README.md
 └── .gitignore
-```
+
 
 ---
 
-# Dataset Features
+## 📊 Dataset Features
 
 | Feature | Description |
-|----------|-------------|
-| Country | Country Name |
-| Life Expectancy | Average Life Expectancy |
-| Expected Years of Schooling | Expected Education Years |
-| Mean Years of Schooling | Average Education Years |
-| GNI Per Capita | Gross National Income |
-| HDI | Human Development Index |
+|:---|:---|
+| **Country** | Country Name |
+| **Life Expectancy** | Average Life Expectancy |
+| **Expected Years of Schooling** | Expected Education Years |
+| **Mean Years of Schooling** | Average Education Years |
+| **GNI Per Capita** | Gross National Income |
+| **HDI** | Human Development Index (Target) |
 
 ---
 
@@ -190,7 +175,7 @@ Evaluation Metrics:
 The trained model is saved using Pickle.
 
 ```
-model/hdi.pkl
+model/model.pkl
 ```
 
 ### 7. Flask Deployment
@@ -204,13 +189,13 @@ The trained model is loaded into the Flask application for prediction.
 Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/HDI-Predictor.git
+git clone https://github.com/nazeer-ahmad-web/human-development-index-Predictor.git
 ```
 
 Move into the project directory
 
 ```bash
-cd human-development-index-predictor
+cd human-development-index-Predictor
 ```
 
 Install dependencies
@@ -330,7 +315,7 @@ pip install -r requirements.txt
 
 # Author
 
-Shaik Nazeer Ahmad
+**Shaik Nazeer Ahmad**
 
 AI & Machine Learning Student
 
