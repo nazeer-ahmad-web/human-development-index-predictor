@@ -1,166 +1,216 @@
-# 🌍 Human Development Index (HDI) Prediction System
+# A Comprehensive Measure of Well-Being
+## Human Development Index (HDI) Prediction using Machine Learning and Flask
 
-A Machine Learning based web application that predicts the **Human Development Index (HDI) category** of a country using key socio-economic indicators such as **Life Expectancy**, **Education**, and **Gross National Income (GNI)**.
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Flask](https://img.shields.io/badge/Flask-Web_App-black)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange)
+![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
 
----
+## 📌 Project Overview
 
-# 📌 Project Overview
+The **Human Development Index (HDI) Predictor** is a Machine Learning web application that predicts the Human Development Index of a country using socioeconomic indicators.
 
-The Human Development Index (HDI) is a statistical measure developed by the **United Nations Development Programme (UNDP)** to evaluate a country's overall development.
+The project combines **Data Analysis**, **Machine Learning**, and **Flask Web Development** to build an end-to-end prediction system.
 
-This project uses a **Random Forest Classifier** to predict the HDI category of a country based on four important indicators.
+Users enter important development indicators such as:
 
-The application is deployed using the **Flask** web framework with a modern and user-friendly interface.
-
----
-
-# 🎯 Problem Statement
-
-The Human Development Index (HDI) measures development using three major dimensions:
-
-- ❤️ Health (Life Expectancy)
-- 🎓 Education (Expected & Mean Years of Schooling)
-- 💰 Standard of Living (Gross National Income Per Capita)
-
-This project predicts whether a country belongs to one of the following HDI categories:
-
-- 🌍 Very High
-- 🟢 High
-- 🟡 Medium
-- 🔴 Low
-
----
-
-# 🚀 Features
-
-- Predict Human Development Index (HDI) category
-- Machine Learning based prediction
-- Flask Web Application
-- Modern Dashboard User Interface
-- Real-time Prediction
-- Easy-to-use Input Form
-- Responsive Design
-
----
-
-# 🛠 Technologies Used
-
-## Programming Language
-- Python
-
-## Machine Learning
-- Scikit-learn
-- Pandas
-- NumPy
-- Joblib
-
-## Web Framework
-- Flask
-
-## Frontend
-- HTML5
-- CSS3
-- Tailwind CSS
-
-## Development Tools
-- VS Code
-- Git
-- GitHub
-
----
-
-# 📊 Dataset
-
-The project uses the **Human Development Report (HDR)** dataset.
-
-### Important Features
-
-- Life Expectancy at Birth
+- Life Expectancy
 - Expected Years of Schooling
 - Mean Years of Schooling
 - Gross National Income (GNI) Per Capita
 
-Target Variable:
+The application predicts the **HDI Score** and classifies it into one of the following categories:
 
-- HDI Category
-
----
-
-# 🤖 Machine Learning Model
-
-Algorithm Used:
-
-**Random Forest Classifier**
-
-### Why Random Forest?
-
-- High Accuracy
-- Handles Classification Problems Efficiently
-- Reduces Overfitting
-- Works Well with Structured Data
-- Easy to Train
+- Very High
+- High
+- Medium
+- Low
 
 ---
 
-# 🌐 Web Application Workflow
+# Objectives
 
-1. User enters:
-   - Life Expectancy
-   - Expected Years of Schooling
-   - Mean Years of Schooling
-   - GNI Per Capita
-
-2. Flask receives the input.
-
-3. The trained Machine Learning model predicts the HDI category.
-
-4. The prediction is displayed on the result page.
+- Understand the Human Development Index dataset.
+- Perform Exploratory Data Analysis (EDA).
+- Visualize important relationships among features.
+- Build a Machine Learning prediction model.
+- Evaluate model performance.
+- Deploy the model using Flask.
+- Develop a user-friendly web interface.
 
 ---
 
-# 📁 Project Structure
+# Features
+
+- Data Cleaning
+- Missing Value Handling
+- Exploratory Data Analysis
+- Data Visualization
+- Feature Engineering
+- Linear Regression Model
+- Model Evaluation
+- HDI Score Prediction
+- HDI Category Classification
+- Flask Web Application
+- Pickle Model Serialization
+
+---
+
+# Project Architecture
 
 ```
-HDI_Prediction_Project
+User
+ │
+ ▼
+Flask Web Interface
+ │
+ ▼
+Input Validation
+ │
+ ▼
+Machine Learning Model
+ │
+ ▼
+HDI Prediction
+ │
+ ▼
+HDI Category
+ │
+ ▼
+Display Results
+```
+
+---
+
+# Technology Stack
+
+| Technology | Purpose |
+|------------|---------|
+| Python | Programming Language |
+| Pandas | Data Processing |
+| NumPy | Numerical Computing |
+| Matplotlib | Data Visualization |
+| Seaborn | Statistical Visualization |
+| Scikit-Learn | Machine Learning |
+| Flask | Web Framework |
+| HTML | Frontend |
+| CSS | Styling |
+| Bootstrap | Responsive UI |
+| Pickle | Model Serialization |
+
+---
+
+# Folder Structure
+
+```
+HDI-Predictor/
 │
-├── dataset
-│   └── HDR.csv
+├── app.py
+├── model.py
+├── requirements.txt
+├── README.md
 │
-├── model
-│   └── model.pkl
+├── dataset/
+│   └── HDI.csv
 │
-├── notebooks
+├── model/
+│   └── hdi.pkl
 │
-├── screenshots
+├── notebooks/
+│   └── EDA.ipynb
 │
-├── static
-│   └── style.css
-│
-├── templates
+├── templates/
 │   ├── index.html
 │   └── result.html
 │
-├── app.py
-├── train_model.py
-├── requirements.txt
-├── README.md
-└── .gitignore
+├── static/
+│   └── style.css
+│
+└── images/
 ```
 
 ---
 
-# ⚙ Installation
+# Dataset Features
+
+| Feature | Description |
+|----------|-------------|
+| Country | Country Name |
+| Life Expectancy | Average Life Expectancy |
+| Expected Years of Schooling | Expected Education Years |
+| Mean Years of Schooling | Average Education Years |
+| GNI Per Capita | Gross National Income |
+| HDI | Human Development Index |
+
+---
+
+# Machine Learning Workflow
+
+### 1. Data Collection
+
+- Load HDI Dataset
+- Explore Dataset
+
+### 2. Data Preprocessing
+
+- Handle Missing Values
+- Mean Imputation
+- Label Encoding
+- Feature Selection
+- Train-Test Split
+
+### 3. Exploratory Data Analysis
+
+Visualizations include:
+
+- Distribution Plots
+- Scatter Plots
+- Strip Plots
+- Heatmaps
+- Correlation Matrix
+- Pair Plots
+
+### 4. Model Building
+
+Algorithm Used:
+
+- Linear Regression
+
+### 5. Model Evaluation
+
+Evaluation Metrics:
+
+- R² Score
+- Mean Absolute Error (MAE)
+- Mean Squared Error (MSE)
+- Root Mean Squared Error (RMSE)
+
+### 6. Model Serialization
+
+The trained model is saved using Pickle.
+
+```
+model/hdi.pkl
+```
+
+### 7. Flask Deployment
+
+The trained model is loaded into the Flask application for prediction.
+
+---
+
+# Installation
 
 Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/HDI_Prediction_Project.git
+git clone https://github.com/yourusername/HDI-Predictor.git
 ```
 
-Move into the project folder
+Move into the project directory
 
 ```bash
-cd HDI_Prediction_Project
+cd human-development-index-predictor
 ```
 
 Install dependencies
@@ -169,85 +219,127 @@ Install dependencies
 pip install -r requirements.txt
 ```
 
-Run the Flask application
+Run the application
 
 ```bash
 python app.py
 ```
 
-Open your browser and visit
+Open the browser
 
 ```
-http://127.0.0.1:5000
+http://127.0.0.1:5000/
 ```
 
 ---
 
-# 📷 Screenshots
+# User Inputs
 
-## Home Page
+The application accepts:
 
-(Add screenshot here)
-
----
-
-## Prediction Result
-
-(Add screenshot here)
+- Life Expectancy
+- Expected Years of Schooling
+- Mean Years of Schooling
+- GNI Per Capita
 
 ---
 
-# 🎯 Sample Prediction
+# Output
 
-### Input
+The application displays:
 
-Life Expectancy : 82
+- Predicted HDI Score
+- HDI Category
 
-Expected Years of Schooling : 18
-
-Mean Years of Schooling : 13
-
-GNI Per Capita : 65000
-
-### Output
+Example:
 
 ```
+Predicted HDI Score
+
+0.912
+
+Category
+
 Very High Human Development
 ```
 
 ---
 
-# 📈 Future Enhancements
+# Screenshots
 
-- Confidence Score
-- Interactive Charts
-- Country Comparison Dashboard
+Include screenshots of:
+
+- Home Page
+- Input Form
+- Prediction Result
 - Data Visualization
-- Cloud Deployment
-- API Integration
+- Heatmap
+- Scatter Plot
+- Model Evaluation
 
 ---
 
-# 👩‍💻 Developer
+# Future Enhancements
 
-**Rabiya Tahseen**
-
-B.Tech Computer Science Engineering
-
-Machine Learning Project
-
----
-
-# 🙏 Acknowledgements
-
-- United Nations Development Programme (UNDP)
-- Human Development Report Dataset
-- Scikit-learn
-- Flask
-- Python Community
+- Add Random Forest Regression
+- Add XGBoost Regressor
+- Improve Prediction Accuracy
+- Deploy on Render
+- Deploy on Railway
+- Deploy on AWS
+- Add Interactive Charts
+- Add Country Comparison Dashboard
+- Use Latest UNDP Dataset
 
 ---
 
-# 📜 License
+# Learning Outcomes
 
-This project is developed for **educational and academic purposes only**.
+After completing this project, you will understand:
+
+- Data Analysis
+- Exploratory Data Analysis
+- Machine Learning Workflow
+- Regression Algorithms
+- Model Evaluation
+- Flask Development
+- Model Deployment
+- End-to-End AI Project Development
+
+---
+
+# Requirements
+
+```
+Flask
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+pickle-mixin
+```
+
+Install using
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# Author
+
+Shaik Nazeer Ahmad
+
+AI & Machine Learning Student
+
+---
+
+# License
+
+This project is created for educational and learning purposes.
+
+---
+
+## ⭐ If you found this project useful, don't forget to star the repository!
