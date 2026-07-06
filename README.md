@@ -101,7 +101,8 @@ Display Results
 
 ---
 
-# Project Structure 
+# Project Structure
+```
 human-development-index-predictor
 │
 ├── dataset
