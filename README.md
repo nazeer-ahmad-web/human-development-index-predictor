@@ -87,7 +87,9 @@ Display Results
 
 ---
 
-## 📂 Folder Structure
+# Folder Structure
+
+```
 human-development-index-predictor
 │
 ├── dataset
@@ -111,10 +113,11 @@ human-development-index-predictor
 ├── train_model.py
 ├── requirements.txt
 ├── README.md
-└── .gitignore
+└── .gitignore```
 
 
 ---
+
 
 ## 📊 Dataset Features
 
