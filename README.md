@@ -100,33 +100,30 @@ Display Results
 
 ---
 
-# Folder Structure
-
-```
-HDI-Predictor/
+human-development-index-predictor
 │
-├── app.py
-├── model.py
-├── requirements.txt
-├── README.md
+├── dataset
+│   └── HDR.csv
 │
-├── dataset/
-│   └── HDI.csv
+├── model
+│   └── model.pkl
 │
-├── model/
-│   └── hdi.pkl
+├── notebooks
 │
-├── notebooks/
-│   └── EDA.ipynb
+├── screenshots
 │
-├── templates/
+├── static
+│   └── style.css
+│
+├── templates
 │   ├── index.html
 │   └── result.html
 │
-├── static/
-│   └── style.css
-│
-└── images/
+├── app.py
+├── train_model.py
+├── requirements.txt
+├── README.md
+└── .gitignore
 ```
 
 ---
